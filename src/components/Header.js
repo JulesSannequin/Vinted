@@ -1,17 +1,31 @@
 import { Link } from "react-router-dom";
+import logo from "../components/logo-vinted.svg";
 
-const Header = () => {
+const Header = ({ handleToken, userToken }) => {
   return (
-    <div>
-      <p>Logo</p>
-      <Link to="/Login">
-        <button>Connexion</button>
+    <div className="header">
+      <img src={logo} alt="logo vinted" />
+      {!userToken ? (
+        <>
+          <Link to="/Login">
+            <button>Connexion</button>
+          </Link>
+          <Link to="/Signup">
+            <button>S'inscrire</button>
+          </Link>
+        </>
+      ) : (
+        <button
+          onClick={() => {
+            handleToken();
+          }}
+        >
+          Déconnexion
+        </button>
+      )}
+      <Link to="/publish">
+        <button>Vends tes articles</button>
       </Link>
-      <Link to="/Signup">
-        <button>S'inscrire</button>
-      </Link>
-
-      <button>Déconnexion</button>
     </div>
   );
 };

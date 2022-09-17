@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { axios } from "axios";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [newsLetter, setNewsLetter] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +21,10 @@ const Signup = ({ handleToken }) => {
           newsletter: newsLetter,
         }
       );
-      console.log(response.data);
+
+      // console.log(response.data);
+      handleToken(response.data.token);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -46,7 +51,7 @@ const Signup = ({ handleToken }) => {
         }}
       />
       <input
-        type="text"
+        type="password"
         placeholder="password"
         value={password}
         onChange={(event) => {
