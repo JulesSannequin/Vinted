@@ -22,7 +22,6 @@ const Signup = ({ handleToken }) => {
         }
       );
 
-      // console.log(response.data);
       handleToken(response.data.token);
       navigate("/");
     } catch (error) {

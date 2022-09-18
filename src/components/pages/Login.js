@@ -15,7 +15,7 @@ const Login = ({ handleToken }) => {
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         { email, password }
       );
-      // console.log(response.data);
+
       handleToken(response.data.token);
       navigate("/");
     } catch (error) {

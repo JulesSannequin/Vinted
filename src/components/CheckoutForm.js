@@ -18,7 +18,7 @@ const CheckoutForm = ({ data }) => {
       const stripeResponse = await stripe.createToken(cardElement, {
         name: "2609754343",
       });
-      //   console.log(stripeResponse);
+
       const stripeToken = stripeResponse.token.id;
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
