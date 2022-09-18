@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 const Publish = ({ userToken }) => {
   const [picture, setPicture] = useState("");
