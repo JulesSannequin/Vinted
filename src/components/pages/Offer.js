@@ -22,23 +22,28 @@ const Offer = () => {
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
-    <div>
-      <h2>{data.product_name}</h2>
-      <p>{data.product_price}</p>
+    <div className="offer-main">
+      <div className="offer-left">
+        <h2>{data.product_name}</h2>
+        <p>{data.product_price}</p>
+        <div>
+          {data.product_details.map((item) => {
+            const keys = Object.keys(item);
 
-      <div>
-        {data.product_details.map((item) => {
-          const keys = Object.keys(item);
+            return (
+              <p>
+                {keys[0]} : {item[keys[0]]}
+              </p>
+            );
+          })}
+          <Link to="/payment" state={{ data: data }}>
+            Acheter
+          </Link>
+        </div>
+      </div>
 
-          return (
-            <p>
-              {keys[0]} : {item[keys[0]]}
-            </p>
-          );
-        })}
-        <Link to="/payment" state={{ data: data }}>
-          Acheter
-        </Link>
+      <div className="offer-right">
+        <img src={data.product_image.secure_url} alt="cloth" />
       </div>
     </div>
   );

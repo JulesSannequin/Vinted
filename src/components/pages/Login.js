@@ -25,7 +25,7 @@ const Login = ({ handleToken }) => {
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <h1>se connecter</h1>
+      <h1>Se connecter</h1>
       <input
         type="email"
         placeholder="email"

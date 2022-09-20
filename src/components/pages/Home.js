@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import background from "../images/background.jpeg";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -23,15 +24,20 @@ const Home = () => {
   return isLoading === true ? (
     <div>En cours de chargement </div>
   ) : (
-    <div>
+    <div className="global-home">
+      <div className="background-home">
+        <img src={background} alt="background" />
+      </div>
       {data.offers.map((offer) => {
         console.log(offer.Id);
         return (
           <Link to={`/offer/${offer._id}`}>
-            <div>
-              <h2>{offer.product_name}</h2>
-              <img src={offer.product_image.secure_url} alt="cloth" />
-              <p>{offer.product_price}</p>
+            <div className="home-center">
+              <div className="home-card">
+                <h2>{offer.product_name}</h2>
+                <img src={offer.product_image.secure_url} alt="cloth" />
+                <p>{offer.product_price}</p>
+              </div>
             </div>
           </Link>
         );
