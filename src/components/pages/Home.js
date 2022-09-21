@@ -26,6 +26,14 @@ const Home = () => {
   ) : (
     <div className="global-home">
       <div className="background-home">
+        <div className="modal-main">
+          <div className="modal-card">
+            <h1>Prêts à faire du tri dans vos placards ?</h1>
+            <Link to="/publish">
+              <button>Commencer a vendre</button>
+            </Link>
+          </div>
+        </div>
         <img src={background} alt="background" />
       </div>
       {data.offers.map((offer) => {

@@ -16,17 +16,20 @@ const Payment = () => {
   const userToken = Cookies.get("userToken");
   //   console.log(userToken);
   return userToken ? (
-    <div>
-      <div>
-        <span>Nom de l'offre : </span> <span>{data.product_name}</span>
+    <div className="payment-main">
+      <div className="payment-card">
+        <div className="span-top">
+          <span>Plus qu'une étape avant de vous offrir : </span>{" "}
+          <span>{data.product_name}</span>
+        </div>
+        <div className="span-bottom">
+          <span>Votre achat sera de : </span>
+          <span>{data.product_price} €</span>
+        </div>
+        <Elements stripe={stripePromise}>
+          <CheckoutForm data={data} />
+        </Elements>
       </div>
-      <div>
-        <span>Prix de l'offre</span>
-        <span>{data.product_price} €</span>
-      </div>
-      <Elements stripe={stripePromise}>
-        <CheckoutForm data={data} />
-      </Elements>
     </div>
   ) : (
     <Navigate to="login" />
