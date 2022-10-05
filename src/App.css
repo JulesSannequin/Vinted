@@ -432,3 +432,45 @@
 }
 
 
+@media (max-width: 375px) {
+
+    .header-left {
+        width: 35%;
+    }
+
+   .header {
+    height: 6rem;
+   }
+
+    .header img {
+        width: 5rem;
+        height: 2rem;
+    }
+
+    .header-right button {
+        width: 4rem;
+        font-size: 9px;
+    }
+
+    .modal-card {
+        width: 8rem;
+        height: 9rem;
+    }
+
+    .modal-card h1 {
+        font-size: 15px;
+    }
+
+    .modal-card button {
+        width: 7rem;
+        font-size: 11px;
+        height: 2.2rem;
+    }
+
+    .home-card {
+        width: 17rem;
+        height: 20rem;
+    }
+}
+
+
