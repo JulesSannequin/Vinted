@@ -311,6 +311,35 @@
  cursor: pointer;
 }
 
+.footer {
+    background-color:#2DB0BA;
+    color: white;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    line-height: 25px;
+}
+
+
+.footer-container {
+    
+    width: 30rem;
+    text-align: center;
+
+}
+
+.footer-container a {
+    text-decoration: none;
+    background: linear-gradient(to right,#2DB0BA , steelblue);
+    color: white;
+    border-radius: 2px;
+}
+
+.footer-container a:hover {
+    color: blue;
+}
+
 @media (max-width: 1024px) {
     .header-right button {
         width: 7rem;

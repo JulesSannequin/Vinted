@@ -9,6 +9,7 @@ import Login from "./components/pages/Login";
 import Header from "./components/Header";
 import Publish from "../src/components/pages/Publish";
 import Payment from "./components/pages/Payment";
+import Footer from "./components/Footer";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/publish" element={<Publish userToken={userToken} />} />
           <Route path="/payment" element={<Payment />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
